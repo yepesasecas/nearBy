@@ -7,7 +7,6 @@ class FrontDesk
   end
 
   def handle_request
-    byebug
     beacon.space.actions.each do |action|
       p action.url
     end

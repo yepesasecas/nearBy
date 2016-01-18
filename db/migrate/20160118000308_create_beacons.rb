@@ -5,6 +5,7 @@ class CreateBeacons < ActiveRecord::Migration[5.0]
       t.integer :major
       t.integer :minor
       t.integer :space_id
+      t.string :key
 
       t.timestamps
     end

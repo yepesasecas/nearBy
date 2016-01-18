@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160118001740) do
     t.integer  "major"
     t.integer  "minor"
     t.integer  "space_id"
+    t.string   "key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
