@@ -1,13 +1,13 @@
 class FrontDesk
-  attr_reader :beacon, :user
+  attr_reader :space, :user
 
   def initialize(args)
-    @beacon = args[:beacon]
+    @space = args[:space]
     @user = args[:user]
   end
 
   def handle_request
-    beacon.space.actions.each do |action|
+    space.actions.each do |action|
       p action.url
     end
   end

@@ -1,10 +1,17 @@
 class FrontDeskController < ApplicationController
   def create
-    @frontDesk = FrontDesk.new(
-      beacon: Beacon.find_by(front_desk_params[:beacon]),
-      user: User.new(front_desk_params[:user]))
+    space = Space.find_by_beacon(front_desk_params[:beacon].to_h)
+    byebug
+    if space.empty?
+      render json: {message:"not found"}, status: :unprocessable_entity
+    else
+      @frontDesk = FrontDesk.new(
+        space: space.first,
+        user: User.new(front_desk_params[:user]))
 
-    @frontDesk.handle_request
+      @frontDesk.handle_request
+      render json: @frontDesk
+    end
   end
 
   private
