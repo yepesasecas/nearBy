@@ -46,6 +46,10 @@ class OwnersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def owner_params
-      params.require(:owner).permit(:name, spaces_attributes:[:name, beacon_attributes:[:uuid, :minor, :major]])
+      params.require(:owner).permit(:name,
+        spaces_attributes:[
+          :name,
+          beacon_attributes:[:uuid, :minor, :major],
+          actions_attributes:[:url]])
     end
 end

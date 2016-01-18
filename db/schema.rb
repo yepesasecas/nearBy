@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118000308) do
+ActiveRecord::Schema.define(version: 20160118001740) do
+
+  create_table "actions", force: :cascade do |t|
+    t.integer  "space_id"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "beacons", force: :cascade do |t|
     t.integer  "uuid"
