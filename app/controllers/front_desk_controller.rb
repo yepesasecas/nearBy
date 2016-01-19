@@ -1,7 +1,7 @@
 class FrontDeskController < ApplicationController
   def create
     space = Space.find_by_beacon(front_desk_params[:beacon].to_h)
-    byebug
+
     if space.empty?
       render json: {message:"not found"}, status: :unprocessable_entity
     else
