@@ -8,7 +8,7 @@ class FrontDeskController < ApplicationController
       @frontDesk = FrontDesk.new(
         space: space.first,
         user: User.new(front_desk_params[:user]))
-
+      # testing CodeShip
       @frontDesk.handle_request
       render json: @frontDesk
     end
