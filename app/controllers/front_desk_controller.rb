@@ -5,7 +5,6 @@ class FrontDeskController < ApplicationController
     if space.empty?
       render json: {message:"not found"}, status: :unprocessable_entity
     else
-      p "test"
       @frontDesk = FrontDesk.new(
         space: space.first,
         user: User.new(front_desk_params[:user]))
