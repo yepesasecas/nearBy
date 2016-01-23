@@ -7,8 +7,10 @@ class FrontDesk
   end
 
   def handle_request
-    space.actions.each do |action|
-      p action.url
+    1000.times do
+      space.actions.each do |action|
+        PostCallbackUrlJob.perform_later action.id
+      end
     end
   end
 end

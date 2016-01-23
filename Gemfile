@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 gem 'rails', '>= 5.0.0.beta1', '< 5.1'
 gem 'puma'
+gem 'sidekiq'
 
 group :production do
   gem 'pg'
